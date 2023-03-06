@@ -1,0 +1,126 @@
+{
+  "01": {
+    "sunrise": "7:23:12 AM",
+    "sunset": "6:29:39 PM"
+  },
+  "02": {
+    "sunrise": "7:21:32 AM",
+    "sunset": "6:30:57 PM"
+  },
+  "03": {
+    "sunrise": "7:19:50 AM",
+    "sunset": "6:32:15 PM"
+  },
+  "04": {
+    "sunrise": "7:18:08 AM",
+    "sunset": "6:33:32 PM"
+  },
+  "05": {
+    "sunrise": "7:16:25 AM",
+    "sunset": "6:34:49 PM"
+  },
+  "06": {
+    "sunrise": "7:14:42 AM",
+    "sunset": "6:36:05 PM"
+  },
+  "07": {
+    "sunrise": "7:12:57 AM",
+    "sunset": "6:37:22 PM"
+  },
+  "08": {
+    "sunrise": "7:11:12 AM",
+    "sunset": "6:38:38 PM"
+  },
+  "09": {
+    "sunrise": "7:09:27 AM",
+    "sunset": "6:39:53 PM"
+  },
+  "10": {
+    "sunrise": "7:07:41 AM",
+    "sunset": "6:41:08 PM"
+  },
+  "11": {
+    "sunrise": "7:05:54 AM",
+    "sunset": "6:42:23 PM"
+  },
+  "12": {
+    "sunrise": "7:04:07 AM",
+    "sunset": "6:43:38 PM"
+  },
+  "13": {
+    "sunrise": "7:02:20 AM",
+    "sunset": "6:44:52 PM"
+  },
+  "14": {
+    "sunrise": "7:00:32 AM",
+    "sunset": "6:46:07 PM"
+  },
+  "15": {
+    "sunrise": "6:58:44 AM",
+    "sunset": "6:47:20 PM"
+  },
+  "16": {
+    "sunrise": "6:56:55 AM",
+    "sunset": "6:48:34 PM"
+  },
+  "17": {
+    "sunrise": "6:55:07 AM",
+    "sunset": "6:49:48 PM"
+  },
+  "18": {
+    "sunrise": "6:53:18 AM",
+    "sunset": "6:51:01 PM"
+  },
+  "19": {
+    "sunrise": "6:51:28 AM",
+    "sunset": "6:52:14 PM"
+  },
+  "20": {
+    "sunrise": "6:49:39 AM",
+    "sunset": "6:53:27 PM"
+  },
+  "21": {
+    "sunrise": "6:47:49 AM",
+    "sunset": "6:54:39 PM"
+  },
+  "22": {
+    "sunrise": "6:45:59 AM",
+    "sunset": "6:55:52 PM"
+  },
+  "23": {
+    "sunrise": "6:44:09 AM",
+    "sunset": "6:57:04 PM"
+  },
+  "24": {
+    "sunrise": "6:42:19 AM",
+    "sunset": "6:58:17 PM"
+  },
+  "25": {
+    "sunrise": "6:40:30 AM",
+    "sunset": "6:59:29 PM"
+  },
+  "26": {
+    "sunrise": "6:38:40 AM",
+    "sunset": "7:00:41 PM"
+  },
+  "27": {
+    "sunrise": "7:36:50 AM",
+    "sunset": "8:01:53 PM"
+  },
+  "28": {
+    "sunrise": "7:35:00 AM",
+    "sunset": "8:03:05 PM"
+  },
+  "29": {
+    "sunrise": "7:33:10 AM",
+    "sunset": "8:04:16 PM"
+  },
+  "30": {
+    "sunrise": "7:31:21 AM",
+    "sunset": "8:05:28 PM"
+  },
+  "31": {
+    "sunrise": "7:29:31 AM",
+    "sunset": "8:06:40 PM"
+  }
+}
