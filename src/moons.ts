@@ -17,6 +17,8 @@ type MoonPhase = {
   emoji: string;
 };
 
+export type Moon = [label: string, dateTime: string];
+
 const phaseLimitEmojiHashTable: { [phaseLimit: number]: string } = {
   1: "🌚",
   2: "🌛",
