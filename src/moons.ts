@@ -1,6 +1,8 @@
 import axios from "axios";
+import glob from "glob";
+import fs from "fs-extra";
 
-import { months, outputToData, noRush } from "./utils";
+import { months, outputToData, noRush, addMissingZero } from "./utils";
 
 type ApiMoonPhase = {
   phaseName: string;
@@ -54,6 +56,41 @@ async function getMoonPhases(year: number) {
   await outputToData(`moons-${year}`, moons);
 }
 
+async function mergeMoonPhases() {
+  await noRush();
+
+  const moonFiles = await glob("data/moons-*.json");
+
+  const data = moonFiles
+    .map((file) => {
+      const year = Number(file.match(/moons-(\d{4})\.json/)![1]);
+
+      const yearlyData = fs.readJsonSync(file);
+
+      return Object.entries(yearlyData)
+        .map(([month, phases]) => {
+          return (phases as MoonPhase[]).map((phase) => {
+            const day = addMissingZero(phase.day < 10, phase.day);
+            const time = addMissingZero(
+              Number(phase.time.split(":")[0]) < 10,
+              phase.time
+            );
+
+            return {
+              label: `${phase.emoji} ${phase.name}`,
+              dateTime: new Date(`${year}-${month}-${day}T${time}`),
+            };
+          });
+        })
+        .flat();
+    })
+    .flat();
+
+  await outputToData("moons", data);
+}
+
 // getMoonPhases(2023);
 // getMoonPhases(2024);
 // getMoonPhases(2025);
+
+mergeMoonPhases();
