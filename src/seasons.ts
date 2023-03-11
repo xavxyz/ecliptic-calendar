@@ -19,7 +19,7 @@ type ExtendedMovement = [
   nextInterEnd: YYYYMMDD
 ];
 
-export type ReadableSeason = [label: YYYYMMDD, start: YYYYMMDD, end: YYYYMMDD];
+export type ReadableSeason = [label: string, start: YYYYMMDD, end: YYYYMMDD];
 
 const movementsLabelColorIdTuples = [
   ["🪴 INTERSAISON", "5"],
