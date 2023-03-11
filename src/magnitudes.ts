@@ -5,6 +5,8 @@ import {
   outputToData,
 } from "./utils";
 
+export type Magnitude = [label: string, dateTime: string];
+
 const magnitudeLabels = [
   ["🤝 Équinoxe", "de Printemps"],
   ["🙌 Solstice", "d'Été"],
@@ -12,11 +14,14 @@ const magnitudeLabels = [
   ["🤲 Solstice", "d'Hiver"],
 ];
 
-function getMagnitudes() {
+function getMagnitudes(): Magnitude[] {
   return Object.values(movementMagnitudeAndDuration).map((movement, index) => {
     const [date] = movement;
-    const [label /*season*/] = cycleThroughArray(magnitudeLabels, index);
-    return [label, date];
+    const dateTime = date.toISOString();
+
+    const [label /*, season*/] = cycleThroughArray(magnitudeLabels, index);
+
+    return [label, dateTime];
   });
 }
 
