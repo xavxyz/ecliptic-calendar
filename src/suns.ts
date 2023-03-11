@@ -1,5 +1,7 @@
 import axios from "axios";
 import moment from "moment";
+import glob from "glob";
+import fs from "fs-extra";
 
 import { createDatableArray, months, noRush, hop, outputToData } from "./utils";
 
@@ -9,6 +11,13 @@ type ApiSunData = {
   sunrise: string;
   sunset: string;
 };
+
+export type Sun = [label: string, dateTime: string];
+
+const actionToLabelHashtable = {
+  sunrise: "🌅 ⬆️ 🧘‍♂️",
+  sunset: "🌇 ⬇️ 🧘‍♀️",
+} as const;
 
 async function getSunPhases(year: string, month: string) {
   const daysInMonth = moment(`${year}-${month}`, "YYYY-MM").daysInMonth();
@@ -37,12 +46,42 @@ async function getSunPhases(year: string, month: string) {
   await outputToData(`suns-${year}-${month}`, suns);
 }
 
-(async () => {
-  for (const month of months) {
-    await noRush();
+// (async () => {
+//   for (const month of months) {
+//     await noRush();
 
-    // await getSunPhases("2023", month);
-    // await getSunPhases("2024", month);
-    await getSunPhases("2025", month);
-  }
-})();
+//     // await getSunPhases("2023", month);
+//     // await getSunPhases("2024", month);
+//     await getSunPhases("2025", month);
+//   }
+// })();
+
+async function mergeSuns() {
+  await noRush();
+
+  const sunFiles = await glob("data/suns-*.json");
+
+  const suns = sunFiles
+    .map((file) => {
+      const [, year, month] = file.match(/suns-(\d{4})-(\d{2}).json/)!;
+      const monthlyData: { [day: string]: ApiSunData } = fs.readJsonSync(file);
+
+      return Object.entries(monthlyData)
+        .map(([day, actions]) => {
+          return Object.entries(actions).map(([action, amPmTime]) => {
+            const typedAction = action as keyof ApiSunData;
+
+            return {
+              label: actionToLabelHashtable[typedAction],
+              dateTime: new Date(`${month}/${day}/${year} ${amPmTime}`),
+            };
+          });
+        })
+        .flat();
+    })
+    .flat();
+
+  await outputToData(`suns`, suns);
+}
+
+mergeSuns();
