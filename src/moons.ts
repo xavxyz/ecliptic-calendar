@@ -35,7 +35,7 @@ async function getMoonPhases(year: number) {
     const apiPhases: { [day: number]: ApiMoonPhase } = response.data.phase;
 
     const phases: MoonPhase[] = Object.entries(apiPhases)
-      .filter(([day, moonData]) => moonData.isPhaseLimit)
+      .filter(([, moonData]) => moonData.isPhaseLimit)
       .map(([day, moonData]) => {
         // WHY U NO SIMPLE THIS TS ?
         return {
