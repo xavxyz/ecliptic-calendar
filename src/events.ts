@@ -23,10 +23,10 @@ export async function insertEvent(event: calendar_v3.Schema$Event) {
 }
 
 export function transformMagnitudeToEvent(magnitude: Magnitude) {
-  const [label, dateTime] = magnitude;
+  const [summary, dateTime] = magnitude;
 
   return {
-    summary: label,
+    summary,
     start: {
       dateTime,
       timeZone: "Europe/Paris",
@@ -39,13 +39,13 @@ export function transformMagnitudeToEvent(magnitude: Magnitude) {
 }
 
 export function transformReadableSeasonToEvent(readableSeason: ReadableSeason) {
-  const [label, start, end] = readableSeason;
+  const [summary, start, end] = readableSeason;
 
   const [startDate] = start.toString().split("T");
   const [endDate] = end.toString().split("T");
 
   return {
-    summary: label,
+    summary,
     start: {
       date: startDate,
     },

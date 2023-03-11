@@ -19,9 +19,9 @@ type ExtendedMovement = [
   nextInterEnd: YYYYMMDD
 ];
 
-export type ReadableSeason = [label: string, start: YYYYMMDD, end: YYYYMMDD];
+export type ReadableSeason = [summary: string, start: YYYYMMDD, end: YYYYMMDD];
 
-const movementsLabelColorIdTuples = [
+const movementssummaryColorIdTuples = [
   ["🪴 INTERSAISON", "5"],
   ["🌬 PRINTEMPS", "2" /* 10 ? */],
   ["💐 INTERSAISON", "5"],
@@ -100,8 +100,8 @@ function makeSeasonsCycle(
       ] as MovementBoundaries[];
     }, [] as MovementBoundaries[])
     .map((movement, index) => {
-      const [label] = cycleThroughArray(movementsLabelColorIdTuples, index);
-      return [label, ...movement];
+      const [summary] = cycleThroughArray(movementssummaryColorIdTuples, index);
+      return [summary, ...movement];
     });
 }
 

@@ -12,9 +12,9 @@ type ApiSunData = {
   sunset: string;
 };
 
-export type Sun = [label: string, dateTime: string];
+export type Sun = [summary: string, dateTime: string];
 
-const actionToLabelHashtable = {
+const actionTosummaryHashtable = {
   sunrise: "🌅 ⬆️ 🧘‍♂️",
   sunset: "🌇 ⬇️ 🧘‍♀️",
 } as const;
@@ -72,7 +72,7 @@ async function mergeSuns() {
             const typedAction = action as keyof ApiSunData;
 
             return {
-              label: actionToLabelHashtable[typedAction],
+              summary: actionTosummaryHashtable[typedAction],
               dateTime: new Date(`${month}/${day}/${year} ${amPmTime}`),
             };
           });

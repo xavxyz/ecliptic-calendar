@@ -17,7 +17,7 @@ type MoonPhase = {
   emoji: string;
 };
 
-export type Moon = [label: string, dateTime: string];
+export type Moon = [summary: string, dateTime: string];
 
 const phaseLimitEmojiHashTable: { [phaseLimit: number]: string } = {
   1: "🌚",
@@ -79,7 +79,7 @@ async function mergeMoonPhases() {
             );
 
             return {
-              label: `${phase.emoji} ${phase.name}`,
+              summary: `${phase.emoji} ${phase.name}`,
               dateTime: new Date(`${year}-${month}-${day}T${time}`),
             };
           });

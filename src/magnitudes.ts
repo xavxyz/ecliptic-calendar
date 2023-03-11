@@ -5,9 +5,9 @@ import {
   outputToData,
 } from "./utils";
 
-export type Magnitude = [label: string, dateTime: string];
+export type Magnitude = [summary: string, dateTime: string];
 
-const magnitudeLabels = [
+const magnitudesummarys = [
   ["🤝 Équinoxe", "de Printemps"],
   ["🙌 Solstice", "d'Été"],
   ["🤝 Équinoxe", "d'Automne"],
@@ -19,9 +19,9 @@ function getMagnitudes(): Magnitude[] {
     const [date] = movement;
     const dateTime = date.toISOString();
 
-    const [label /*, season*/] = cycleThroughArray(magnitudeLabels, index);
+    const [summary /*, season*/] = cycleThroughArray(magnitudesummarys, index);
 
-    return [label, dateTime];
+    return [summary, dateTime];
   });
 }
 
