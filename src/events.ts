@@ -14,7 +14,7 @@ const calendar = google.calendar({
 // ? Calendar ID is in the environement variables
 export async function insertEvent(event: calendar_v3.Schema$Event) {
   const res = await calendar.events.insert({
-    calendarId: process.env.CALENDAR_ID,
+    calendarId: process.env.GOOGLE_CALENDAR_ID,
     requestBody: event,
   });
 
