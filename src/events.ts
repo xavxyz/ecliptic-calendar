@@ -41,16 +41,13 @@ export function transformMagnitudeToEvent(magnitude: Magnitude) {
 export function transformReadableSeasonToEvent(readableSeason: ReadableSeason) {
   const [summary, start, end] = readableSeason;
 
-  const [startDate] = start.toString().split("T");
-  const [endDate] = end.toString().split("T");
-
   return {
     summary,
     start: {
-      date: startDate,
+      date: start,
     },
     end: {
-      date: endDate,
+      date: end,
     },
   };
 }
