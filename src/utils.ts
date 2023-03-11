@@ -23,10 +23,13 @@ export function cycleThroughArray<T>(array: T[], index: number) {
   return array[index % array.length];
 }
 
+export function addMissingZero(condition: boolean, unit: string | number) {
+  return condition ? `0${unit}` : String(unit);
+}
+
 export function createDatableArray(length: number) {
-  return Array.from(
-    { length },
-    (_, index) => `${index < 9 ? "0" : ""}${index + 1}`
+  return Array.from({ length }, (_, index) =>
+    addMissingZero(index < 9, index + 1)
   );
 }
 
