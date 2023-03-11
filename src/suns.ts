@@ -3,7 +3,14 @@ import moment from "moment";
 import glob from "glob";
 import fs from "fs-extra";
 
-import { createDatableArray, months, noRush, hop, outputToData } from "./utils";
+import {
+  createDatableArray,
+  months,
+  noRush,
+  hop,
+  outputToData,
+  DateTimeEvent,
+} from "./utils";
 
 const ji = [43.8589744, 4.4206824];
 
@@ -11,8 +18,6 @@ type ApiSunData = {
   sunrise: string;
   sunset: string;
 };
-
-export type Sun = [summary: string, dateTime: string];
 
 const actionTosummaryHashtable = {
   sunrise: "🌅 ⬆️ 🧘‍♂️",
@@ -81,7 +86,7 @@ async function mergeSuns() {
     })
     .flat();
 
-  await outputToData(`suns`, suns);
+  await outputToData(`suns`, suns as unknown as DateTimeEvent[]);
 }
 
 mergeSuns();

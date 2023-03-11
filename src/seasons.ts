@@ -5,6 +5,7 @@ import {
   cycleThroughArray,
   outputToData,
   noRush,
+  PeriodEvent,
 } from "./utils";
 
 type YYYYMMDD = string;
@@ -18,8 +19,6 @@ type ExtendedMovement = [
   transformationEnd: YYYYMMDD,
   nextInterEnd: YYYYMMDD
 ];
-
-export type ReadableSeason = [summary: string, start: YYYYMMDD, end: YYYYMMDD];
 
 const movementssummaryColorIdTuples = [
   ["🪴 INTERSAISON", "5"],
@@ -88,7 +87,7 @@ const extendedMovements = groupExtendedMovementsFromSpringStart("2023-02-13");
 
 function makeSeasonsCycle(
   extendedMovements: ExtendedMovement[]
-): ReadableSeason[] {
+): PeriodEvent[] {
   return extendedMovements
     .reduce((movements, extendedMovement) => {
       const [prev, start, end /*, next*/] = extendedMovement;
@@ -101,7 +100,13 @@ function makeSeasonsCycle(
     }, [] as MovementBoundaries[])
     .map((movement, index) => {
       const [summary] = cycleThroughArray(movementssummaryColorIdTuples, index);
-      return [summary, ...movement];
+      const [startDate, endDate] = movement;
+
+      return {
+        summary,
+        startDate,
+        endDate,
+      };
     });
 }
 

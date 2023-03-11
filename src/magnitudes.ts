@@ -3,9 +3,8 @@ import {
   cycleThroughArray,
   noRush,
   outputToData,
+  DateTimeEvent,
 } from "./utils";
-
-export type Magnitude = [summary: string, dateTime: string];
 
 const magnitudesummarys = [
   ["🤝 Équinoxe", "de Printemps"],
@@ -14,14 +13,14 @@ const magnitudesummarys = [
   ["🤲 Solstice", "d'Hiver"],
 ];
 
-function getMagnitudes(): Magnitude[] {
+function getMagnitudes(): DateTimeEvent[] {
   return Object.values(movementMagnitudeAndDuration).map((movement, index) => {
     const [date] = movement;
     const dateTime = date.toISOString();
 
     const [summary /*, season*/] = cycleThroughArray(magnitudesummarys, index);
 
-    return [summary, dateTime];
+    return { summary, dateTime };
   });
 }
 

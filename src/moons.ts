@@ -2,7 +2,13 @@ import axios from "axios";
 import glob from "glob";
 import fs from "fs-extra";
 
-import { months, outputToData, noRush, addMissingZero } from "./utils";
+import {
+  months,
+  outputToData,
+  noRush,
+  addMissingZero,
+  DateTimeEvent,
+} from "./utils";
 
 type ApiMoonPhase = {
   phaseName: string;
@@ -16,8 +22,6 @@ type MoonPhase = {
   time: string;
   emoji: string;
 };
-
-export type Moon = [summary: string, dateTime: string];
 
 const phaseLimitEmojiHashTable: { [phaseLimit: number]: string } = {
   1: "🌚",
@@ -80,7 +84,9 @@ async function mergeMoonPhases() {
 
             return {
               summary: `${phase.emoji} ${phase.name}`,
-              dateTime: new Date(`${year}-${month}-${day}T${time}`),
+              dateTime: new Date(
+                `${year}-${month}-${day}T${time}`
+              ).toISOString(),
             };
           });
         })
@@ -88,7 +94,7 @@ async function mergeMoonPhases() {
     })
     .flat();
 
-  await outputToData("moons", data);
+  await outputToData("moons", data as DateTimeEvent[]);
 }
 
 // getMoonPhases(2023);

@@ -1,8 +1,7 @@
 import dotenv from "dotenv";
 import { google, calendar_v3 } from "googleapis";
 
-import { Magnitude } from "./magnitudes";
-import { ReadableSeason } from "./seasons";
+import { DateTimeEvent, PeriodEvent } from "./utils";
 
 dotenv.config();
 
@@ -22,8 +21,10 @@ export async function insertEvent(event: calendar_v3.Schema$Event) {
   return res.data;
 }
 
-export function transformMagnitudeToEvent(magnitude: Magnitude) {
-  const [summary, dateTime] = magnitude;
+export function transformDateTimeEventToCalendarEvent(
+  dateTimeEvent: DateTimeEvent
+) {
+  const { summary, dateTime } = dateTimeEvent;
 
   return {
     summary,
@@ -38,16 +39,16 @@ export function transformMagnitudeToEvent(magnitude: Magnitude) {
   };
 }
 
-export function transformReadableSeasonToEvent(readableSeason: ReadableSeason) {
-  const [summary, start, end] = readableSeason;
+export function transformPeriodEventToCalendarEvent(periodEvent: PeriodEvent) {
+  const { summary, startDate, endDate } = periodEvent;
 
   return {
     summary,
     start: {
-      date: start,
+      date: startDate,
     },
     end: {
-      date: end,
+      date: endDate,
     },
   };
 }

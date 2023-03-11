@@ -1,5 +1,20 @@
 import fs from "fs-extra";
 
+interface Event {
+  summary: string;
+}
+
+export interface DateTimeEvent extends Event {
+  summary: string;
+  dateTime: string;
+}
+
+export interface PeriodEvent extends Event {
+  summary: string;
+  startDate: string;
+  endDate: string;
+}
+
 export type MovementMagnitudeAndDuration = [center: Date, duration: number];
 
 export const movementMagnitudeAndDuration: {
