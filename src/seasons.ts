@@ -7,17 +7,19 @@ import {
   noRush,
 } from "./utils";
 
-type MovementBoundaries = [start: Date, end: Date];
+type YYYYMMDD = string;
+
+type MovementBoundaries = [start: YYYYMMDD, end: YYYYMMDD];
 type ExtendedMovement = [
-  prevInterStart: Date,
-  transformationStart: Date,
+  prevInterStart: YYYYMMDD,
+  transformationStart: YYYYMMDD,
   // ? Gestion du centre en génération externe
-  // center: Date,
-  transformationEnd: Date,
-  nextInterEnd: Date
+  // center: YYYYMMDD,
+  transformationEnd: YYYYMMDD,
+  nextInterEnd: YYYYMMDD
 ];
 
-type ReadableSeasons = [label: string, start: Date, end: Date];
+export type ReadableSeason = [label: YYYYMMDD, start: YYYYMMDD, end: YYYYMMDD];
 
 const movementsLabelColorIdTuples = [
   ["🪴 INTERSAISON", "5"],
@@ -31,16 +33,18 @@ const movementsLabelColorIdTuples = [
 ];
 
 function retrieveTransformationDatesFromStartAndDuration(
-  transformationStart: Date,
+  transformationStart: YYYYMMDD,
   duration: number
 ) {
   const previousInterStart = moment(transformationStart)
     .subtract(18, "days")
-    .toDate();
+    .format("YYYY-MM-DD");
   const transformationEnd = moment(transformationStart)
     .add(duration, "days")
-    .toDate();
-  const nextInterEnd = moment(transformationEnd).add(18, "days").toDate();
+    .format("YYYY-MM-DD");
+  const nextInterEnd = moment(transformationEnd)
+    .add(18, "days")
+    .format("YYYY-MM-DD");
 
   return [
     previousInterStart,
@@ -50,7 +54,7 @@ function retrieveTransformationDatesFromStartAndDuration(
   ];
 }
 
-function groupExtendedMovementsFromSpringStart(springStart: Date) {
+function groupExtendedMovementsFromSpringStart(springStart: YYYYMMDD) {
   return Object.values(movementMagnitudeAndDuration).reduce(
     (movements, movementMagnitudeAndDuration, index) => {
       const [, duration] = movementMagnitudeAndDuration;
@@ -80,13 +84,11 @@ function groupExtendedMovementsFromSpringStart(springStart: Date) {
   );
 }
 
-const extendedMovements = groupExtendedMovementsFromSpringStart(
-  new Date("2023-02-13 12:00")
-);
+const extendedMovements = groupExtendedMovementsFromSpringStart("2023-02-13");
 
 function makeSeasonsCycle(
   extendedMovements: ExtendedMovement[]
-): ReadableSeasons[] {
+): ReadableSeason[] {
   return extendedMovements
     .reduce((movements, extendedMovement) => {
       const [prev, start, end /*, next*/] = extendedMovement;
