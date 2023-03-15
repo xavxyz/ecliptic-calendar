@@ -5,9 +5,17 @@ import { DateTimeEvent, PeriodEvent } from "./utils";
 
 dotenv.config();
 
+const auth = new google.auth.GoogleAuth({
+  keyFile: "./secret-key.json",
+  scopes: [
+    "https://www.googleapis.com/auth/calendar",
+    "https://www.googleapis.com/auth/calendar.events",
+  ],
+});
+
 const calendar = google.calendar({
   version: "v3",
-  key: process.env.GOOGLE_API_KEY,
+  auth,
 });
 
 // * Insert a calendar event
