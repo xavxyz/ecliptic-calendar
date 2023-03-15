@@ -1,122 +1,122 @@
 [
-  [
-    "🪴 INTERSAISON",
-    "2023-01-26",
-    "2023-02-13"
-  ],
-  [
-    "🌬 PRINTEMPS",
-    "2023-02-13",
-    "2023-04-27"
-  ],
-  [
-    "💐 INTERSAISON",
-    "2023-04-27",
-    "2023-05-15"
-  ],
-  [
-    "🔥 ÉTÉ",
-    "2023-05-15",
-    "2023-07-30"
-  ],
-  [
-    "🌾 INTERSAISON",
-    "2023-07-30",
-    "2023-08-17"
-  ],
-  [
-    "⚙️ AUTOMNE",
-    "2023-08-17",
-    "2023-10-30"
-  ],
-  [
-    "🚰 INTERSAISON",
-    "2023-10-30",
-    "2023-11-17"
-  ],
-  [
-    "🌊 HIVER",
-    "2023-11-17",
-    "2024-01-26"
-  ],
-  [
-    "🪴 INTERSAISON",
-    "2024-01-26",
-    "2024-02-13"
-  ],
-  [
-    "🌬 PRINTEMPS",
-    "2024-02-13",
-    "2024-04-26"
-  ],
-  [
-    "💐 INTERSAISON",
-    "2024-04-26",
-    "2024-05-14"
-  ],
-  [
-    "🔥 ÉTÉ",
-    "2024-05-14",
-    "2024-07-29"
-  ],
-  [
-    "🌾 INTERSAISON",
-    "2024-07-29",
-    "2024-08-16"
-  ],
-  [
-    "⚙️ AUTOMNE",
-    "2024-08-16",
-    "2024-10-29"
-  ],
-  [
-    "🚰 INTERSAISON",
-    "2024-10-29",
-    "2024-11-16"
-  ],
-  [
-    "🌊 HIVER",
-    "2024-11-16",
-    "2025-01-25"
-  ],
-  [
-    "🪴 INTERSAISON",
-    "2025-01-25",
-    "2025-02-12"
-  ],
-  [
-    "🌬 PRINTEMPS",
-    "2025-02-12",
-    "2025-04-26"
-  ],
-  [
-    "💐 INTERSAISON",
-    "2025-04-26",
-    "2025-05-14"
-  ],
-  [
-    "🔥 ÉTÉ",
-    "2025-05-14",
-    "2025-07-29"
-  ],
-  [
-    "🌾 INTERSAISON",
-    "2025-07-29",
-    "2025-08-16"
-  ],
-  [
-    "⚙️ AUTOMNE",
-    "2025-08-16",
-    "2025-10-29"
-  ],
-  [
-    "🚰 INTERSAISON",
-    "2025-10-29",
-    "2025-11-16"
-  ],
-  [
-    "🌊 HIVER",
-    "2025-11-16",
-    "2026-01-25"
-  ]
+  {
+    "summary": "🪴 INTERSAISON",
+    "startDate": "2023-01-26",
+    "endDate": "2023-02-13"
+  },
+  {
+    "summary": "🌬 PRINTEMPS",
+    "startDate": "2023-02-13",
+    "endDate": "2023-04-27"
+  },
+  {
+    "summary": "💐 INTERSAISON",
+    "startDate": "2023-04-27",
+    "endDate": "2023-05-15"
+  },
+  {
+    "summary": "🔥 ÉTÉ",
+    "startDate": "2023-05-15",
+    "endDate": "2023-07-30"
+  },
+  {
+    "summary": "🌾 INTERSAISON",
+    "startDate": "2023-07-30",
+    "endDate": "2023-08-17"
+  },
+  {
+    "summary": "⚙️ AUTOMNE",
+    "startDate": "2023-08-17",
+    "endDate": "2023-10-30"
+  },
+  {
+    "summary": "🚰 INTERSAISON",
+    "startDate": "2023-10-30",
+    "endDate": "2023-11-17"
+  },
+  {
+    "summary": "🌊 HIVER",
+    "startDate": "2023-11-17",
+    "endDate": "2024-01-26"
+  },
+  {
+    "summary": "🪴 INTERSAISON",
+    "startDate": "2024-01-26",
+    "endDate": "2024-02-13"
+  },
+  {
+    "summary": "🌬 PRINTEMPS",
+    "startDate": "2024-02-13",
+    "endDate": "2024-04-26"
+  },
+  {
+    "summary": "💐 INTERSAISON",
+    "startDate": "2024-04-26",
+    "endDate": "2024-05-14"
+  },
+  {
+    "summary": "🔥 ÉTÉ",
+    "startDate": "2024-05-14",
+    "endDate": "2024-07-29"
+  },
+  {
+    "summary": "🌾 INTERSAISON",
+    "startDate": "2024-07-29",
+    "endDate": "2024-08-16"
+  },
+  {
+    "summary": "⚙️ AUTOMNE",
+    "startDate": "2024-08-16",
+    "endDate": "2024-10-29"
+  },
+  {
+    "summary": "🚰 INTERSAISON",
+    "startDate": "2024-10-29",
+    "endDate": "2024-11-16"
+  },
+  {
+    "summary": "🌊 HIVER",
+    "startDate": "2024-11-16",
+    "endDate": "2025-01-25"
+  },
+  {
+    "summary": "🪴 INTERSAISON",
+    "startDate": "2025-01-25",
+    "endDate": "2025-02-12"
+  },
+  {
+    "summary": "🌬 PRINTEMPS",
+    "startDate": "2025-02-12",
+    "endDate": "2025-04-26"
+  },
+  {
+    "summary": "💐 INTERSAISON",
+    "startDate": "2025-04-26",
+    "endDate": "2025-05-14"
+  },
+  {
+    "summary": "🔥 ÉTÉ",
+    "startDate": "2025-05-14",
+    "endDate": "2025-07-29"
+  },
+  {
+    "summary": "🌾 INTERSAISON",
+    "startDate": "2025-07-29",
+    "endDate": "2025-08-16"
+  },
+  {
+    "summary": "⚙️ AUTOMNE",
+    "startDate": "2025-08-16",
+    "endDate": "2025-10-29"
+  },
+  {
+    "summary": "🚰 INTERSAISON",
+    "startDate": "2025-10-29",
+    "endDate": "2025-11-16"
+  },
+  {
+    "summary": "🌊 HIVER",
+    "startDate": "2025-11-16",
+    "endDate": "2026-01-25"
+  }
 ]
