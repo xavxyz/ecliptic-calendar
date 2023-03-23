@@ -1,5 +1,9 @@
 # ⚗️🪴 Ecliptic Calendar
 
+<p style="text-align: center;">
+  <img src="./demo.gif" />
+</p>
+
 Luni-solar movements described as :
 
 - 5 Chinese Seasons : `MovementsBoundaries[]`
@@ -8,6 +12,7 @@ Luni-solar movements described as :
 - Moon phases : `MoonPhase[]` (http://www.wdisseny.com/lluna/?lang=en)
 
 ```
+
 — — Support d’écoute : le superbe spectacle de l’amour
 ——— Cadre de recherche : la courbure de l’espace-temps
 ```
